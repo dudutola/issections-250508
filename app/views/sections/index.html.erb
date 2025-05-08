@@ -1,0 +1,15 @@
+<h1>My Sections</h1>
+
+<div class="add_new">
+  <%# <%= link_to raw('<i class="fa-solid fa-plus"></i> New Section'), new_section_path, class: "btn" %>
+</div>
+
+<div class="sections">
+  <% @sections.each do |section| %>
+    <%# <%= link_to section_path(section) do %>
+      <div class="section_card">
+        <h2><%= section.name %></h2>
+      </div>
+    <% end %>
+  <%# <% end %>
+</div>
