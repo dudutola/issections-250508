@@ -1,10 +1,16 @@
 <div class="section_header">
   <h1 class="default_h1"><%= @section.name %></h1>
 
-
+  <div class="section_actions">
+    <%= link_to raw('<i class="fa-solid fa-pen-to-square"></i>'), edit_section_path(@section), class: "btn edit_btn" %>
+    <%= link_to raw('<i class="fa-solid fa-trash"></i>'), section_path(@section), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn delete_btn" %>
+  </div>
 </div>
 
-
+<div class="btn_options">
+  <%= link_to raw('<i class="fa-solid fa-plus"></i> Add issue'), "#", class: "btn add_new" %>
+  <%= link_to raw('<i class="fa-solid fa-plus"></i> Add steps'), "#", class: "btn add_new" %>
+</div>
 
 <br>
 <%= link_to "> Back to all Sections", root_path, class: "back" %>

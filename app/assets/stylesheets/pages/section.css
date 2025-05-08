@@ -44,3 +44,23 @@
     gap: 8px;
   }
 }
+
+.section_actions,
+.issue_actions {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 24px;
+
+  .btn {
+    font-size: 20px;
+  }
+
+  .edit_btn {
+    color: #ccc;
+  }
+
+  .delete_btn {
+    color: #e53935;
+  }
+}

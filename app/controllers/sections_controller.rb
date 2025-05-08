@@ -1,5 +1,5 @@
 class SectionsController < ApplicationController
-  before_action :set_section, only: [ :show ]
+  before_action :set_section, only: [ :show, :edit, :update, ]
 
   def index
     @sections = Section.all
@@ -18,6 +18,16 @@ class SectionsController < ApplicationController
       redirect_to @section, notice: "Section created successfully!"
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @section.update(section_params)
+      redirect_to @section, notice: "Section was successfully updated!"
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
