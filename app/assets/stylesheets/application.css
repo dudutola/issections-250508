@@ -17,6 +17,8 @@
 /* Pages */
 @import "./pages/section.css";
 
+/* Components */
+@import "./components/navbar.css";
 
 body {
   margin: 0;
