@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "sections#index"
 
-  resources :sections, only: [ :show ]
+  resources :sections, only: [ :show, :new, :create ]
 end
