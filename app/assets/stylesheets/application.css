@@ -20,6 +20,7 @@
 /* Components */
 @import "./components/navbar.css";
 @import "./components/section_card.css";
+@import "./components/form.css";
 
 
 body {

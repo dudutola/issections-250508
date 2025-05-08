@@ -1,0 +1,73 @@
+form {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #354b32;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+
+  label {
+    font-size: 1rem;
+    color: #f4f4f4;
+    margin-bottom: 6px;
+    display: block;
+  }
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #4c5e43;
+  border-radius: 4px;
+  background-color: #f4f4f4;
+  color: #333;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+#solved input {
+  width: inherit;
+  transform: scale(1.3);
+}
+
+form input[type="file"] {
+  padding: 6px;
+}
+
+.image_file {
+  margin-bottom: 28px;
+
+  input {
+    margin-bottom: 2px;
+  }
+}
+.image_preview {
+  p, .preview {
+    margin: 4px 4px 4px 8px;
+  }
+
+  .preview {
+    width: 30%;
+  }
+}
+
+form input[type="submit"] {
+  background-color: #7c9a4f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+form input[type="submit"]:hover {
+  background-color: #6a863f;
+}
+
+.error-message {
+  color: #e74c3c;
+}
