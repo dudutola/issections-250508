@@ -1,0 +1,46 @@
+.section_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .section_actions .btn {
+    font-size: 22px;
+  }
+}
+
+.add_new {
+  width: 100%;
+  border: 1px solid white;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 12px 0;
+  transition: transform 0.2s ease-in-out;
+}
+.add_new:hover {
+  transform: scale(1.01);
+}
+
+.btn {
+  color: black;
+  font-weight: bold;
+}
+
+.section_container {
+  h2 {
+    margin-top: 8px;
+  }
+}
+
+/* show */
+.btn_options {
+  display: flex;
+  gap: 20px;
+
+  .add_new {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}

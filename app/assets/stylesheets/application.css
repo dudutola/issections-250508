@@ -13,3 +13,49 @@
  *= require_tree .
  *= require_self
  */
+
+/* Pages */
+@import "./pages/section.css";
+
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background-color: #80808042;
+  background-color: #263926;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  margin-top: 30px;
+  margin-bottom: 100px;
+  padding: 0 20px;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+.default_h1, .default_h2 {
+  color: #ccc;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.section_name {
+  text-align: end;
+}
+
+.back {
+  color: #A7F3D0;
+}
