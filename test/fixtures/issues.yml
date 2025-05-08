@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  problem: MyText
+  solution: MyText
+  solved: false
+  section: one
+
+two:
+  title: MyString
+  problem: MyText
+  solution: MyText
+  solved: false
+  section: two
