@@ -19,6 +19,8 @@
 
 /* Components */
 @import "./components/navbar.css";
+@import "./components/section_card.css";
+
 
 body {
   margin: 0;
