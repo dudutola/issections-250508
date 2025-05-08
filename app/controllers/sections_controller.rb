@@ -1,5 +1,5 @@
 class SectionsController < ApplicationController
-  before_action :set_section, only: [ :show, :edit, :update, ]
+  before_action :set_section, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @sections = Section.all
@@ -29,6 +29,11 @@ class SectionsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @section.destroy
+    redirect_to root_path, notice: "Section was successfully deleted!"
   end
 
   private
