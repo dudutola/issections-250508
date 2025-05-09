@@ -33,7 +33,7 @@
 
   <div class="issue_actions">
     <%= link_to raw('<i class="fa-solid fa-pen-to-square"></i>'), edit_section_issue_path(@section, @issue), class: "btn edit_btn" %> ||
-    <%= link_to raw('<i class="fa-solid fa-trash"></i>'), "#", class: "btn delete_btn" %>
+    <%= link_to raw('<i class="fa-solid fa-trash"></i>'), section_issue_path(@section, @issue), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn delete_btn" %>
   </div>
 
   <%= link_to "> Back", section_path(@section), class: "back" %>

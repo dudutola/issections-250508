@@ -1,5 +1,5 @@
 class IssuesController < ApplicationController
-  before_action :set_issue, only: [ :show, :edit, :update, ]
+  before_action :set_issue, only: [ :show, :edit, :update, :destroy ]
 
   def show; end
 
@@ -28,6 +28,11 @@ class IssuesController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @issue.destroy
+    redirect_to section_path(@section), notice: "Issue was successfully deleted!"
   end
 
   private
