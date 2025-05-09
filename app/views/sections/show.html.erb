@@ -8,7 +8,7 @@
 </div>
 
 <div class="btn_options">
-  <%= link_to raw('<i class="fa-solid fa-plus"></i> Add issue'), "#", class: "btn add_new" %>
+  <%= link_to raw('<i class="fa-solid fa-plus"></i> Add issue'), new_section_issue_path(@section), class: "btn add_new" %>
   <%= link_to raw('<i class="fa-solid fa-plus"></i> Add steps'), "#", class: "btn add_new" %>
 </div>
 
@@ -17,3 +17,23 @@
 
 
 <br>
+<div class="section_container">
+  <h2>Issues in this section:</h2>
+  <% if @section.issues.empty? %>
+    <p>No issues yet. Add one!</p>
+  <% else %>
+    <div class="issues_list">
+      <% @issues.each do |issue| %>
+        <%= link_to section_issue_path(@section, issue) do %>
+          <div class="issue_card">
+            <% if issue.solved == false %>
+              <span class="badge"></span>
+            <% end %>
+            <h3><%= issue.title %></h3>
+            <p><%= issue.problem %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

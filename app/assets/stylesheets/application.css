@@ -22,6 +22,7 @@
 @import "./components/navbar.css";
 @import "./components/section_card.css";
 @import "./components/form.css";
+@import "./components/issue_card.css";
 
 
 body {

@@ -40,6 +40,7 @@ class SectionsController < ApplicationController
 
   def set_section
     @section = Section.find(params[:id])
+    @issues = @section.issues
   end
 
   def section_params
