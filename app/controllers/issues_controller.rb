@@ -1,5 +1,5 @@
 class IssuesController < ApplicationController
-  before_action :set_issue, only: [ :show ]
+  before_action :set_issue, only: [ :show, :edit, :update, ]
 
   def show; end
 
@@ -16,6 +16,17 @@ class IssuesController < ApplicationController
       redirect_to @section, notice: "Issue was created successfully!"
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @issue.update(issue_params)
+      redirect_to section_issue_path(@section, @issue), notice: "Issue was successfully updated!"
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 

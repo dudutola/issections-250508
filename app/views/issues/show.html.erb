@@ -18,7 +18,7 @@
     <% if @issue.problem.present? %>
       <p><%= @issue.problem %></p>
     <% else %>
-      <p>No problem descrition yet.</p>
+      <p>No problem description yet.</p>
     <% end %>
   </div>
 
@@ -32,7 +32,7 @@
   </div>
 
   <div class="issue_actions">
-    <%= link_to raw('<i class="fa-solid fa-pen-to-square"></i>'), "#", class: "btn edit_btn" %> ||
+    <%= link_to raw('<i class="fa-solid fa-pen-to-square"></i>'), edit_section_issue_path(@section, @issue), class: "btn edit_btn" %> ||
     <%= link_to raw('<i class="fa-solid fa-trash"></i>'), "#", class: "btn delete_btn" %>
   </div>
 
