@@ -5,4 +5,6 @@ class Issue < ApplicationRecord
   has_many :keywords, through: :issue_keywords
 
   validates :title, presence: true
+
+  attr_accessor :keyword_list
 end

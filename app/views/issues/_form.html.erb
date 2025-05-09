@@ -42,6 +42,11 @@
     <small>Choose an image (optional)</small>
   </div>
 
+  <div class="keywords">
+    <%= f.label :keyword_list, "Keywords (comma separated)" %>
+    <%= f.text_field :keyword_list, placeholder: "terminal, database error, rails db:migrate" %>
+  </div>
+
   <div>
     <%= f.submit %>
   </div>
