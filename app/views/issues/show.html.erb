@@ -7,7 +7,7 @@
 
   <% if @issue.image.attached? %>
     <div class="image_container">
-      <%= image_tag @issue.image, alt: "Issue image" %>
+      <%= cl_image_tag @issue.image.key, alt: "Issue image" %>
     </div>
   <% else %>
     <p>No image available for this issue.</p>

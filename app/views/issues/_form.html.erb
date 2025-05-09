@@ -34,7 +34,7 @@
     <% if issue.image.attached? %>
       <div class="image_preview">
         <p>Current Image:</p>
-        <%= image_tag issue.image, alt: "Current Image", class: "preview" %>
+        <%= cl_image_tag issue.image.key, alt: "Current Image", class: "preview" %>
       </div>
     <% end %>
 
