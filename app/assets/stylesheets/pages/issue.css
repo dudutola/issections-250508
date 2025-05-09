@@ -1,0 +1,49 @@
+.step_container {
+  .step_actions {
+    justify-content: start !important;
+  }
+
+  .default_h1 {
+    margin-bottom: 4px;
+  }
+}
+
+.issue_container {
+  h2 {
+    margin-bottom: 0;
+  }
+
+  .problem_description,
+  .solution_description {
+    margin-left: 12px;
+
+    p {
+      margin-top: 0;
+    }
+  }
+
+  .image_container img {
+    width: 100%;
+    border-radius: 4px;
+  }
+}
+
+.issue_actions,
+.section_actions {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 24px;
+
+  .btn {
+    font-size: 20px;
+  }
+
+  .edit_btn {
+    color: #ccc;
+  }
+
+  .delete_btn {
+    color: #e53935;
+  }
+}

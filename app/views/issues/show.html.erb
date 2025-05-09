@@ -1,0 +1,40 @@
+<div class="issue_container">
+  <h1 class="default_h1"><%= @issue.title %></h1>
+
+  <hr>
+
+  <p class="section_name"><strong>Section:</strong> <%= @issue.section.name %></p>
+
+  <% if @issue.image.attached? %>
+    <div class="image_container">
+      <%= image_tag @issue.image, alt: "Issue image" %>
+    </div>
+  <% else %>
+    <p>No image available for this issue.</p>
+  <% end %>
+
+  <div class="problem_description">
+    <h2 class="default_h2">Problem:</h2>
+    <% if @issue.problem.present? %>
+      <p><%= @issue.problem %></p>
+    <% else %>
+      <p>No problem descrition yet.</p>
+    <% end %>
+  </div>
+
+  <div class="solution_description">
+    <h2 class="default_h2">Solution:</h2>
+    <% if @issue.solution.present? %>
+      <p><%= @issue.solution %></p>
+    <% else %>
+      <p>No solution provided yet.</p>
+    <% end %>
+  </div>
+
+  <div class="issue_actions">
+    <%= link_to raw('<i class="fa-solid fa-pen-to-square"></i>'), "#", class: "btn edit_btn" %> ||
+    <%= link_to raw('<i class="fa-solid fa-trash"></i>'), "#" class: "btn delete_btn" %>
+  </div>
+
+  <%= link_to "> Back", section_path(@section), class: "back" %>
+</div>
