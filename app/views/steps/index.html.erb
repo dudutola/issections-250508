@@ -7,11 +7,11 @@
       <div class="steps_scroll">
         <div class="steps">
           <% section.steps.each do |step| %>
-            <%# <%= link_to section_step_path(section, step), class: "step_card" do %>
+            <%= link_to section_step_path(section, step), class: "step_card" do %>
               <div class="steps_card section_card">
                 <h3><%= step.title %></h3>
               </div>
-            <%# <% end %>
+            <% end %>
           <% end %>
         </div>
       </div>

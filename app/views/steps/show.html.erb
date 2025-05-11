@@ -1,0 +1,28 @@
+<div class="step_container">
+  <h1 class="default_h1"><%= @step.title %></h1>
+
+
+  <hr>
+
+  <p class="section_name"><strong>Section:</strong> <%= @step.section.name %></p>
+
+  <div class="description">
+    <h2 class="default_h2">Description:</h2>
+    <% if @step.description.present? %>
+      <p><%= @step.description %></p>
+    <% else %>
+      <p>No description yet.</p>
+    <% end %>
+  </div>
+
+  <div class="content">
+    <h2 class="default_h2">Content:</h2>
+    <% if @step.content.present? %>
+      <p><%= markdown(@step.content) %></p>
+    <% else %>
+      <p>No content provided yet.</p>
+    <% end %>
+  </div>
+
+  <%= link_to "> Back", steps_path, class: "back" %>
+</div>
