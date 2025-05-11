@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_05_09_152026) do
+ActiveRecord::Schema[7.1].define(version: 2025_05_11_094744) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -74,9 +74,20 @@ ActiveRecord::Schema[7.1].define(version: 2025_05_09_152026) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "steps", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.text "content"
+    t.bigint "section_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["section_id"], name: "index_steps_on_section_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "issue_keywords", "issues"
   add_foreign_key "issue_keywords", "keywords"
   add_foreign_key "issues", "sections"
+  add_foreign_key "steps", "sections"
 end
