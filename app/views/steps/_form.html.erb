@@ -1,0 +1,29 @@
+<%= form_with model: [section, step], class: "issue_form" do |f| %>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title, placeholder: "Enter the title here" %>
+    <% if step.errors[:title].any? %>
+      <div class="error_message">
+        <ul>
+          <% step.errors[:title].each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description, placeholder: "Add a description" %>
+  </div>
+
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content, placeholder: "Provide the content here in Markdown format: 1., 2...", rows: 10 %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -70,3 +70,4 @@ end
 
 gem "ostruct"
 gem "cloudinary"
+gem "redcarpet"
