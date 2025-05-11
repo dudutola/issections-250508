@@ -1,0 +1,39 @@
+#searchbar {
+  display: flex;
+  align-items: end;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 0;
+  box-shadow: none;
+  margin-top: 20px;
+
+  input {
+    margin-bottom: 0;
+  }
+
+  .search_input {
+    flex-grow: 1;
+  }
+}
+
+.searchbar_actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  #search_btn {
+    padding: 9px 20px;
+  }
+
+  .fa-arrows-rotate {
+    background-color: #ece8e8;
+    color: #333;
+    border: none;
+    padding: 9px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 19px;
+    transition: background-color 0.3s;
+  }
+}

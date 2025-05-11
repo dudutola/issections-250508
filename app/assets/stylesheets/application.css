@@ -23,6 +23,7 @@
 @import "./components/section_card.css";
 @import "./components/form.css";
 @import "./components/issue_card.css";
+@import "./components/search_bar.css";
 
 
 body {

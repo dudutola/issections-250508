@@ -1,0 +1,10 @@
+<%= form_with url: section_path(section), method: :get, id: "searchbar" do %>
+  <div class="search_input">
+    <%= text_field_tag :keyword, params[:keyword], placeholder: "Search issues by keyword: rails..." %>
+  </div>
+
+  <div class="searchbar_actions">
+    <%= submit_tag "search", id: "search_btn" %>
+    <%= link_to raw('<i class="fa-solid fa-arrows-rotate"></i>'), section_path(@section), class: "clear_btn" %>
+  </div>
+<% end %>

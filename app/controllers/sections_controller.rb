@@ -40,7 +40,15 @@ class SectionsController < ApplicationController
 
   def set_section
     @section = Section.find(params[:id])
-    @issues = @section.issues
+
+    if params[:keyword].present?
+      @issues = @section.issues
+                        .joins(:keywords)
+                        .where("LOWER(keywords.word) LIKE ?", "%#{params[:keyword].downcase}%")
+                        .distinct
+    else
+      @issues = @section.issues
+    end
   end
 
   def section_params
