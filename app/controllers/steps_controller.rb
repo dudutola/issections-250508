@@ -1,5 +1,5 @@
 class StepsController < ApplicationController
-  before_action :set_step, only: [ :show, ]
+  before_action :set_step, only: [ :show, :edit, :update, ]
 
   def index
     @sections = Section.includes(:steps)
@@ -20,6 +20,16 @@ class StepsController < ApplicationController
       redirect_to section_step_path(@section, @step), notice: "Step was created successfully!"
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @step.update(steps_params)
+      redirect_to section_step_path(@section, @step), notice: "Step was successfully updated!"
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 

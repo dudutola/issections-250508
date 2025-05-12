@@ -1,7 +1,9 @@
 <div class="step_container">
   <h1 class="default_h1"><%= @step.title %></h1>
 
-
+  <div class="step_actions issue_actions">
+    <%= link_to raw('<i class="fa-solid fa-pen-to-square"></i>'), edit_section_step_path(@section, @step), class: "btn edit_btn" %> ||
+  </div>
   <hr>
 
   <p class="section_name"><strong>Section:</strong> <%= @step.section.name %></p>
