@@ -1,5 +1,5 @@
 class StepsController < ApplicationController
-  before_action :set_step, only: [ :show, :edit, :update, ]
+  before_action :set_step, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @sections = Section.includes(:steps)
@@ -31,6 +31,11 @@ class StepsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @step.destroy
+    redirect_to steps_path, notice: "Step was successfully deleted!"
   end
 
   private

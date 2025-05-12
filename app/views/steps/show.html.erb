@@ -3,6 +3,7 @@
 
   <div class="step_actions issue_actions">
     <%= link_to raw('<i class="fa-solid fa-pen-to-square"></i>'), edit_section_step_path(@section, @step), class: "btn edit_btn" %> ||
+    <%= link_to raw('<i class="fa-solid fa-trash"></i>'), section_step_path(@section, @step), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn delete_btn" %>
   </div>
   <hr>
 
