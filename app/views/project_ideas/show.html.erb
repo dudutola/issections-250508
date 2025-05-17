@@ -7,6 +7,10 @@
       <p>No description provided.</p>
     <% end %>
   </div>
+
+  <div class="idea_actions issue_actions">
+    <%= link_to raw('<i class="fa-solid fa-pen-to-square"></i>'), edit_project_idea_path(@project_idea), class: "btn edit_btn" %> ||
+  </div>
 </div>
 
 <%= link_to "> Back to ideas", project_ideas_path, class: "back" %>

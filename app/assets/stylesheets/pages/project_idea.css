@@ -39,6 +39,9 @@
   font-weight: 400;
   font-style: normal;
   color: #333;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 /* form */

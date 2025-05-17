@@ -1,5 +1,5 @@
 class ProjectIdeasController < ApplicationController
-  before_action :set_project_idea, only: [ :show, ]
+  before_action :set_project_idea, only: [ :show, :edit, :update, ]
   def index
     @project_ideas = ProjectIdea.all.order(created_at: :desc)
   end
@@ -17,6 +17,16 @@ class ProjectIdeasController < ApplicationController
       redirect_to project_ideas_path, notice: "project_ideas created successfully!"
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @project_idea.update(project_idea_params)
+      redirect_to @project_idea, notice: "The idea was successfully updated!"
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
