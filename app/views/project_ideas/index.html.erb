@@ -6,8 +6,10 @@
 
 <div class="project_ideas">
   <% @project_ideas.each do |project_idea| %>
-    <div class="project_idea_card">
-      <h2>- <%= project_idea.title %>...</h2>
-    </div>
+    <%= link_to project_idea_path(project_idea) do %>
+      <div class="project_idea_card">
+        <h2>- <%= project_idea.title %>...</h2>
+      </div>
+    <% end %>
   <% end %>
 </div>

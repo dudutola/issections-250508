@@ -1,0 +1,12 @@
+<div class="project_idea_details">
+  <div class="project_idea_card">
+    <h1><%= @project_idea.title %>:</h1>
+    <% if @project_idea.description.present? %>
+      <p>- <%= @project_idea.description %></p>
+    <% else %>
+      <p>No description provided.</p>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to "> Back to ideas", project_ideas_path, class: "back" %>

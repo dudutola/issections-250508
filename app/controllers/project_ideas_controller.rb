@@ -1,7 +1,10 @@
 class ProjectIdeasController < ApplicationController
+  before_action :set_project_idea, only: [ :show, ]
   def index
     @project_ideas = ProjectIdea.all.order(created_at: :desc)
   end
+
+  def show; end
 
   def new
     @project_idea = ProjectIdea.new
@@ -18,6 +21,10 @@ class ProjectIdeasController < ApplicationController
   end
 
   private
+
+  def set_project_idea
+    @project_idea = ProjectIdea.find(params[:id])
+  end
 
   def project_idea_params
     params.require(:project_idea).permit(:title, :description, :done)
