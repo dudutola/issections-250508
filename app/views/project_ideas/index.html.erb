@@ -9,6 +9,7 @@
     <%= link_to project_idea_path(project_idea) do %>
       <div class="project_idea_card">
         <h2>- <%= project_idea.title %>...</h2>
+        <%= link_to raw('<i class="fa-solid fa-trash"></i>'), project_idea_path(project_idea), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn delete_btn" %>
       </div>
     <% end %>
   <% end %>

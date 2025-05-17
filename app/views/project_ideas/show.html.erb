@@ -10,6 +10,8 @@
 
   <div class="idea_actions issue_actions">
     <%= link_to raw('<i class="fa-solid fa-pen-to-square"></i>'), edit_project_idea_path(@project_idea), class: "btn edit_btn" %> ||
+    <%= link_to raw('<i class="fa-solid fa-trash"></i>'), project_idea_path(@project_idea), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn delete_btn" %>
+
   </div>
 </div>
 

@@ -1,5 +1,5 @@
 class ProjectIdeasController < ApplicationController
-  before_action :set_project_idea, only: [ :show, :edit, :update, ]
+  before_action :set_project_idea, only: [ :show, :edit, :update, :destroy ]
   def index
     @project_ideas = ProjectIdea.all.order(created_at: :desc)
   end
@@ -28,6 +28,11 @@ class ProjectIdeasController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @project_idea.destroy
+    redirect_to project_ideas_path, notice: "The idea was successfully deleted!"
   end
 
   private
