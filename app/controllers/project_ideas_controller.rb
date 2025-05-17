@@ -1,5 +1,5 @@
 class ProjectIdeasController < ApplicationController
-  before_action :set_project_idea, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_project_idea, only: [ :show, :edit, :update, :destroy, :toggle_done ]
   def index
     @project_ideas = ProjectIdea.all.order(created_at: :desc)
   end
@@ -33,6 +33,11 @@ class ProjectIdeasController < ApplicationController
   def destroy
     @project_idea.destroy
     redirect_to project_ideas_path, notice: "The idea was successfully deleted!"
+  end
+
+  def toggle_done
+    @project_idea.update(done: !@project_idea.done)
+    redirect_to project_ideas_path
   end
 
   private

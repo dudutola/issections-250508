@@ -6,11 +6,17 @@
 
 <div class="project_ideas">
   <% @project_ideas.each do |project_idea| %>
-    <%= link_to project_idea_path(project_idea) do %>
       <div class="project_idea_card">
-        <h2>- <%= project_idea.title %>...</h2>
-        <%= link_to raw('<i class="fa-solid fa-trash"></i>'), project_idea_path(project_idea), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn delete_btn" %>
+        <%= link_to project_idea_path(project_idea) do %>
+          <h2 class="<%= 'line_through' if project_idea.done %>">- <%= project_idea.title %>...</h2>
+        <% end %>
+
+        <div class="project_idea_actions">
+          <%= button_to toggle_done_project_idea_path(project_idea), method: :patch do %>
+            <i class="fa-solid <%= project_idea.done ? "fa-arrow-rotate-left" : "fa-pencil" %>"></i>
+          <% end %>
+          <%= link_to raw('<i class="fa-solid fa-trash"></i>'), project_idea_path(project_idea), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn delete_btn" %>
+        </div>
       </div>
-    <% end %>
   <% end %>
 </div>

@@ -54,3 +54,22 @@
 .form_description textarea {
   height: 100px;
 }
+
+.project_idea_actions {
+  display: flex;
+  gap: 12px;
+
+  form {
+    all: unset;
+
+    button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+}
+.line_through {
+  text-decoration: line-through;
+  color: rgb(129, 8, 8);
+}

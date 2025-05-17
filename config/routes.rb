@@ -15,5 +15,9 @@ Rails.application.routes.draw do
   end
 
   resources :steps, only: [ :index ]
-  resources :project_ideas, only: [ :index, :show, :new, :create, :edit, :update, :destroy ]
+  resources :project_ideas, only: [ :index, :show, :new, :create, :edit, :update, :destroy ] do
+    member do
+      patch :toggle_done
+    end
+  end
 end
