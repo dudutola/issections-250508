@@ -18,6 +18,7 @@
 @import "./pages/section.css";
 @import "./pages/issue.css";
 @import "./pages/steps.css";
+@import "./pages/project_idea.css";
 
 /* Components */
 @import "./components/navbar.css";

@@ -1,13 +1,13 @@
 <h1>Ideas I want to explore</h1>
 
-<div class="add_new">
-  <%= link_to raw('<i class="fa-solid fa-plus"></i> New Idea'), new_section_path, class: "btn" %>
+<div class="add_new" id="new_idea">
+  <%= link_to raw('<i class="fa-solid fa-lightbulb"></i> New Idea'), new_project_idea_path, class: "btn" %>
 </div>
 
 <div class="project_ideas">
   <% @project_ideas.each do |project_idea| %>
     <div class="project_idea_card">
-      <h2><%= project_idea.title %></h2>
+      <h2>- <%= project_idea.title %>...</h2>
     </div>
   <% end %>
 </div>

@@ -1,0 +1,24 @@
+<%= form_with model: project_idea do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, placeholder: "Add a title to your idea..." %>
+    <% if project_idea.errors[:title].any? %>
+      <div class="error_message">
+        <ul>
+          <% project_idea.errors[:title].each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.label :decription %>
+    <%= f.text_field :decription, placeholder: "Describe your idea..." %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
